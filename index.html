@@ -5,24 +5,19 @@
     <title>Hello World</title>
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="./Application.jsx"></script>
-    <script src="./HelloMessage.jsx"></script>
-    <script src="./MarkdownEditor.jsx"></script>
-    <script src="./Timer.jsx"></script>
+    <script type="text/babel" src="https://raw.githubusercontent.com/julian-b24/js-react-intro/master/Application.jsx"></script>
+    <script type="text/babel" src="https://raw.githubusercontent.com/julian-b24/js-react-intro/master/HelloMessage.jsx"></script>
+    <script type="text/babel" src="https://raw.githubusercontent.com/julian-b24/js-react-intro/master/MarkdownEditor.jsx"></script>
+    <script type="text/babel" src="https://raw.githubusercontent.com/julian-b24/js-react-intro/master/Timer.jsx"></script>
 
     <!-- Don't use this in production: -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="text/babel">
-
-      ReactDOM.render(
-        <h1>Hello, world!</h1>,
-        document.getElementById('root')
-      );
-
-    </script>
+    <div id="todos-example"></div>
+    <div id="hello-example"></div>
+    <div id="markdown-example"></div>
+    <div id="timer-example"></div>
     <!--
       Note: this page is a great way to try React but it's not suitable for production.
       It slowly compiles JSX with Babel in the browser and uses a large development build of React.
