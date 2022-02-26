@@ -22,7 +22,7 @@
       class TodoApp extends React.Component {
 		constructor(props) {
 			super(props);
-			this.state = { items: [], text: '' };
+			this.state = { items: [], text: '', count: 65 };
 			this.handleChange = this.handleChange.bind(this);
 			this.handleSubmit = this.handleSubmit.bind(this);
 		}
@@ -40,7 +40,7 @@
 						value={this.state.text}
 						/>
 						<button>
-						Add #{this.state.items.length + 1}
+						Add #{String.fromCharCode(this.state.count)}
 						</button>
 					</form>
 				</div>
@@ -60,10 +60,19 @@
 				text: this.state.text,
 				id: Date.now()
 			};
-			this.setState(state => ({
+			if(this.state.count >= 90){
+				this.setState(state => ({
 				items: state.items.concat(newItem),
-				text: ''
-			}));
+				text: '',
+				count: 65
+				}));
+			}else{
+				this.setState(state => ({
+				items: state.items.concat(newItem),
+				text: '',
+				count: this.state.count + 1
+				}));
+			}
 		}
   	}
   
@@ -72,7 +81,7 @@
 			return (
 				<ul>
 				{this.props.items.map(item => (
-					<li key={item.id}>{item.text}</li>
+					<li type="A" key={item.id}>{item.text}</li>
 				))}
 				</ul>
 			);
